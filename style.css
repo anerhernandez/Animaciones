@@ -1,0 +1,94 @@
+.contenedor{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 20px;
+}
+.alinear{
+    display: flex;
+    justify-content: center;
+}
+.progress {
+    background: rgba(209, 73, 73, 0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 40px;
+    width: 200px;
+  }
+  .progress-value {
+    animation-duration: 3s;
+    animation-name: cargar_barra_roja;
+    animation-iteration-count: infinite;
+    box-shadow: 0 10px 40px -10px #b10000;
+    border-radius: 100px;
+    background: #ff0000;
+    height: 30px;
+    width: 0;
+  }
+
+  /*Barra roja*/
+  @keyframes cargar_barra_roja {
+    0% { width: 0; }
+    100% { width: 100%; }
+  }
+
+  /*Círculo verde*/
+  @keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to { 
+        transform: rotate(360deg);
+    }
+}
+
+.cargar {
+	width: 50px;
+	height: 50px;
+	border:solid 5px #22aa39;
+	border-radius: 50%;
+	border-right-color: transparent;
+	border-bottom-color: transparent; 	
+    transition: all 0.5s ease-in;
+    animation-name: rotate; 
+    animation-duration:1.0s; 
+    animation-iteration-count:infinite;
+    animation-timing-function:linear; 
+}
+/*Dots*/
+
+.dots_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dots{
+    margin: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(63, 63, 63);
+}
+.dot1{
+    animation: pulse .4s ease 0s infinite alternate;
+}
+.dot2{
+    animation: pulse .4s ease .2s infinite alternate;
+}
+.dot3{
+    animation: pulse .4s ease .4s infinite alternate;
+}
+@keyframes pulse {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: .25;
+      transform: scale(.75);
+    }
+  }
