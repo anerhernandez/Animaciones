@@ -3,11 +3,14 @@
     text-align: center;
     grid-template-columns: repeat(3, auto);
     grid-gap: 20px;
+    margin-top: 5%;
 }
 .alinear{
     display: flex;
     justify-content: center;
 }
+
+/*Barra roja*/
 .progress {
     background: rgba(209, 73, 73, 0.1);
     justify-content: flex-start;
@@ -30,22 +33,12 @@
     width: 0;
   }
 
-  /*Barra roja*/
   @keyframes cargar_barra_roja {
     0% { width: 0; }
     100% { width: 100%; }
   }
 
-  /*Círculo verde*/
-  @keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to { 
-        transform: rotate(360deg);
-    }
-}
-
+/*Círculo verde*/
 .cargar {
 	width: 50px;
 	height: 50px;
@@ -58,6 +51,14 @@
     animation-duration:1.0s; 
     animation-iteration-count:infinite;
     animation-timing-function:linear; 
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to { 
+        transform: rotate(360deg);
+    }
 }
 /*Dots*/
 
@@ -92,3 +93,27 @@
       transform: scale(.75);
     }
   }
+/*Loading word*/
+.loading_word {
+    width: 150px;
+    font-weight: bold;
+    font-family: sans-serif;
+    background: linear-gradient(currentColor 0 0) 0 100%/0% 10px no-repeat;
+    animation: l2 2s linear infinite;
+  }
+  .loading_word p{
+    font-size: 20px;
+  }
+  @keyframes l2 {to{background-size: 100% 10px}}
+
+
+/*Loading appear*/
+.loading_appear {
+    width: fit-content;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 20px;
+    clip-path: inset(0 100% 0 0);
+    animation: appear 2.5s steps(11) infinite;
+  }
+  @keyframes appear {to{clip-path: inset(0 -1ch 0 0)}}
